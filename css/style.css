@@ -110,6 +110,31 @@
   line-height: 2;
 }
 
+.finish {
+  background: linear-gradient(200deg, rgba(238, 9, 121, 0.8), rgba(255, 106, 0, 0.8));
+  position: relative;
+  z-index: 999;
+}
+
+.finish > p {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: .15rem;
+  line-height: 2;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0.1rem 0.1rem 0.2rem #333;
+}
+
+.finish .area .circles {
+  z-index: -1;
+}
+
+.finish .area li {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 /*---------- cssまとめ ----------*/
 /*---------- wrapper ----------*/
 #wrapper {
@@ -208,8 +233,12 @@
   /*---------- asking_03-----------*/
   /*---------- futureStory -----------*/
   /*---------- futureStory -----------*/
-  /*---------- futureStoryDescription -----------*/
-  /*---------- futureStoryDescription -----------*/
+  /*---------- futureStoryDescription_01 -----------*/
+  /*---------- futureStoryDescription_01 -----------*/
+  /*---------- futureStoryDescription_02 -----------*/
+  /*---------- futureStoryDescription_02 -----------*/
+  /*---------- twoPeopleTied -----------*/
+  /*---------- twoPeopleTied -----------*/
 }
 
 #wrapper #mainCont > div {
@@ -222,10 +251,17 @@
 #wrapper #mainCont #futureStory h3 span span {
   display: unset;
   font-size: .8rem;
+  letter-spacing: 0rem;
 }
 
 #wrapper #mainCont #futureStory h3 .small {
   display: unset;
+}
+
+#wrapper #mainCont #twoPeopleTied h3 span span {
+  display: unset;
+  font-size: .8rem;
+  letter-spacing: 0rem;
 }
 
 /*---------- wrapper ----------*/
