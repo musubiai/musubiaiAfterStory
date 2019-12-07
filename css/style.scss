@@ -2,7 +2,8 @@
 /*---------- 変数 ----------*/
 $mainColor : #ff0000;
 $linear-gradient: linear-gradient(200deg, rgba(238,9,121,1),rgba(255,106,0,1));
-$linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0,.8));;
+$linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0,.8));
+$aiYui: linear-gradient(200deg, rgba(250, 143, 191,.7),rgba(138, 176, 250,.7));
 /*---------- 変数 ----------*/
 
 
@@ -248,23 +249,20 @@ $linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(0,0,0,0.5);
+                    background: $aiYui;
                     border-radius: 1rem;
                 }
                 p{
                     width: 100%;
                     color: #fff;
-                    font-size: 2.6rem;
-                    text-shadow: .1rem .1rem .1rem #000;
+                    font-size: 2.8rem;
                     letter-spacing: .1rem;
                     position: relative;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%,-50%);
-                    span{
-                        font-size: 1.8rem;
-                        letter-spacing: 0;
+                    &:first-child{
                     }
                     @keyframes noise-anim{
                         $steps:20;
@@ -287,7 +285,7 @@ $linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0
                         clip:rect(0,900px,0,0); 
                     }       
                     &:after{
-                        text-shadow: -2px 0 red;
+                        text-shadow: -1px 0 red;
                         animation:noise-anim 3s infinite linear alternate-reverse;
                     }  
                     @keyframes noise-anim-2{
@@ -299,7 +297,7 @@ $linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0
                         }
                     }
                     &:before{
-                        text-shadow: 2px 0 blue; 
+                        text-shadow: 1px 0 blue; 
                         animation:noise-anim-2 3s infinite linear alternate-reverse;
                     }
                 }
