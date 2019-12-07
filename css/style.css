@@ -239,6 +239,8 @@
   /*---------- futureStoryDescription_02 -----------*/
   /*---------- twoPeopleTied -----------*/
   /*---------- twoPeopleTied -----------*/
+  /*---------- aiYui -----------*/
+  /*---------- aiYui -----------*/
 }
 
 #wrapper #mainCont > div {
@@ -262,6 +264,39 @@
   display: unset;
   font-size: .8rem;
   letter-spacing: 0rem;
+}
+
+#wrapper #mainCont #aiYui div {
+  position: relative;
+}
+
+#wrapper #mainCont #aiYui div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+#wrapper #mainCont #aiYui div p {
+  width: 100%;
+  color: #fff;
+  font-size: 2.6rem;
+  text-shadow: .1rem .1rem .1rem #000;
+  letter-spacing: .1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#wrapper #mainCont #aiYui div p span {
+  font-size: 1.8rem;
+  letter-spacing: 0;
 }
 
 /*---------- wrapper ----------*/
