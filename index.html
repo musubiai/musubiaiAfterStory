@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>musubiai2.0 AfterStory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="red">
+    <meta name="apple-mobile-web-app-title" content="musubiai2.0">
+    <link rel="apple-touch-icon" href="./musubiai_icon.png" sizes="72x72">
+    <link rel="apple-touch-icon" href="./musubiai_icon.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="./musubiai_icon.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="./musubiai_icon.png" sizes="144x144">
+    <link rel="icon" sizes="192x192" href="musubiai_icon.png">
+    <link rel="manifest" href="./manifest.json">
+
+    <link rel="stylesheet" href="https://use.typekit.net/csc1gvk.css"><!-- futuraPT -->
+    <script type="text/javascript" src="./js/source-han-serif.js"></script><!-- 源ノ角ゴシック -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css"><!-- リセット用css-->
+    <link rel="stylesheet" type="text/css" href="./css/allStyle.css"><!-- 全適用css -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/logoSvg.css">
+    <link rel="stylesheet" type="text/css" href="./css/animation.css">
+    <link rel="stylesheet" type="text/css" href="./css/footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+    <script type="text/javascript" src="./js/jquery-2.0.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.inview.min.js"></script>
+
+    <script>
+        // service workerが有効なら、service-worker.js を登録します
+    //     if ('serviceWorker' in navigator) {
+    //       navigator.serviceWorker.register('./service-worker.js').then(function() { console.log('Service Worker Registered'); });
+    //    }
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            //SVG読み込み
+            $('h1').load('svg.html');
+            //グラデーション読み込み
+            $('.area').load('gradation.html');
+            //フッター読み込み
+            $('footer').load('footer.html');
+
+            //始めにメインコンテンツを消してアニメーションだけを出す
+            $("#mainCont").css("display","none");
+            // その後にアニメーションを消して
+            setTimeout(function() {
+                $('#firstAnimation').fadeOut();
+            }, 4000);
+            // メインコンテンツを出す
+            setTimeout(function() {
+                $('#mainCont').fadeIn();
+            }, 4700);
+
+            $('.inview').css({"opacity":0});
+            $('.inview').on('inview', function(event, isInView) {
+                if (isInView) {
+                    $(this).css({"opacity":1});
+                    $(this).addClass('animated');
+                    $(this).addClass('fadeInUp');
+                } 
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <!-- wrapper -->
+    <div id="wrapper">
+
+        <!-- firstAnimation -->
+        <div id="firstAnimation">
+            <h1></h1>
+            <h2><img src="./img/copy.svg"></h2>
+        </div>
+        <!-- firstAnimation -->
+
+        <!-- mainCont -->
+        <div id="mainCont" class="container">
+
+            <!-- asking_01 -->
+            <div id="asking_01" class="ask child">
+                <p>
+                    <span>musubiai <span>2.0</span></span> は<br>
+                    どうでしたか？
+                </p>
+                <div class="area"></div>
+            </div>
+            <!-- asking_01 -->
+
+            <!-- asking_02 -->
+            <div id="asking_02" class="ask child">
+                <p>
+                    <span>musubiai <span>2.0</span></span> が<br>
+                    実現した未来は<br>
+                    今よりも、もっと明るい<br>
+                    そう信じています。
+                </p>
+                <div class="area"></div>
+            </div>
+            <!-- asking_02 -->
+            
+            <!-- asking_03 -->
+            <div id="asking_03" class="ask child">
+                <p>
+                    どんな素敵な未来が<br>
+                    待っているのかを<br>
+                    覗いてみましょう。
+                </p>
+                <div class="area"></div>
+            </div>
+            <!-- asking_03 -->
+
+            <!-- futureStory -->
+            <div id="futureStory" class="child startCont">
+                <h3 class="inview">
+                    <span>musubiai <span>2.0</span>のある未来</span>
+                    出会えるのは、<br>
+                    素敵な相手だけ？
+                </h3>
+                <p><span>#</span>01</p>
+            </div>
+            <!-- futureStory -->
+
+            <!-- futureStoryDescription -->
+            <div id="futureStoryDescription_01" class="child text">
+                <p>
+                    出会えるのは、素敵な相手<br>
+                    だけではなく、素敵な自分<br>
+                    とも出会うことができる。
+                </p>
+                <div class="area"></div>
+            </div>
+            <!-- futureStoryDescription -->
+
+            <!-- futureStoryDescription -->
+            <div id="futureStoryDescription_02" class="child text">
+                <p>
+                </p>
+                <div class="area"></div>
+            </div>
+            <!-- futureStoryDescription -->
+
+            <footer></footer>
+
+        </div><!-- mainCont -->        
+    </div><!-- wrapper -->
+    <script src="./app.js"></script>
+</body>
+</html>
