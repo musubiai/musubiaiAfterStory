@@ -3,7 +3,7 @@
 $mainColor : #ff0000;
 $linear-gradient: linear-gradient(200deg, rgba(238,9,121,1),rgba(255,106,0,1));
 $linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0,.8));
-$aiYui: linear-gradient(200deg, rgba(250, 143, 191,.7),rgba(138, 176, 250,.7));
+$aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
 /*---------- 変数 ----------*/
 
 
@@ -255,7 +255,8 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.7),rgba(138, 176, 250,.7));
                 p{
                     width: 100%;
                     color: #fff;
-                    font-size: 2.8rem;
+                    text-shadow: .1rem .1rem .1rem #222;
+                    font-size: 3.0rem;
                     letter-spacing: .1rem;
                     position: relative;
                     position: absolute;
@@ -285,8 +286,8 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.7),rgba(138, 176, 250,.7));
                         clip:rect(0,900px,0,0); 
                     }       
                     &:after{
-                        text-shadow: -1px 0 red;
-                        animation:noise-anim 3s infinite linear alternate-reverse;
+                        text-shadow: -1.5px 0 red;
+                        animation:noise-anim 2s infinite linear alternate-reverse;
                     }  
                     @keyframes noise-anim-2{
                         $steps:20;
@@ -297,8 +298,8 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.7),rgba(138, 176, 250,.7));
                         }
                     }
                     &:before{
-                        text-shadow: 1px 0 blue; 
-                        animation:noise-anim-2 3s infinite linear alternate-reverse;
+                        text-shadow: 1.5px 0 blue; 
+                        animation:noise-anim-2 2s infinite linear alternate-reverse;
                     }
                 }
             }
