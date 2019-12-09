@@ -46,7 +46,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
         line-height: 2;
         span{
             span{
-                font-size: 1.4rem;
+                font-size: 1.3rem;
                 letter-spacing: 0;
             }
         }
@@ -66,6 +66,11 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
             font-size: 1rem;
             letter-spacing: .1rem;
             margin-bottom: 3%;
+            span{
+                display: unset;
+                font-size: .8rem;
+                letter-spacing: 0rem;
+            }
         }
     }
     h3+p{
@@ -200,18 +205,6 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
 
         /*---------- futureStory -----------*/
         #futureStory{
-            h3{
-                span{
-                    span{
-                        display: unset;
-                        font-size: .8rem;
-                        letter-spacing: 0rem;
-                    }
-                }
-                .small{
-                    display: unset;
-                }
-            }
         }/*---------- futureStory -----------*/
 
         /*---------- futureStoryDescription_01 -----------*/
@@ -223,20 +216,51 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
         #futureStoryDescription_02{
         }
         /*---------- futureStoryDescription_02 -----------*/
+
+        /*---------- futureStoryFinish -----------*/
+        #futureStoryFinish{
+        }
+        /*---------- futureStoryFinish -----------*/
     
         /*---------- twoPeopleTied -----------*/
         #twoPeopleTied{
-            h3{
-                span{
-                    span{
-                        display: unset;
-                        font-size: .8rem;
-                        letter-spacing: 0rem;
-                    }
-                }
-            }
         }   
         /*---------- twoPeopleTied -----------*/
+
+        /*---------- twoPeopleTiedDescription_01 -----------*/
+        #twoPeopleTiedDescription_01{
+        }
+        /*---------- twoPeopleTiedDescription_01 -----------*/
+
+        /*---------- twoPeopleTiedDescription_02 -----------*/
+        #twoPeopleTiedDescription_02{
+        }
+        /*---------- twoPeopleTiedDescription_02 -----------*/
+
+        /*---------- twoPeopleTiedFinish -----------*/
+        #twoPeopleTiedFinish{
+        }
+        /*---------- twoPeopleTiedFinish -----------*/
+
+        /*---------- changeWorld -----------*/
+        #changeWorld{
+        }   
+        /*---------- changeWorld -----------*/
+
+        /*---------- changeWorldDescription_01 -----------*/
+        #changeWorldDescription_01{
+        }
+        /*---------- changeWorldDescription_01 -----------*/
+
+        /*---------- changeWorldDescription_02 -----------*/
+        #changeWorldDescription_02{
+        }
+        /*---------- changeWorldDescription_02 -----------*/
+
+        /*---------- changeWorldFinish -----------*/
+        #changeWorldFinish{
+        }
+        /*---------- changeWorldFinish -----------*/
 
         /*---------- aiYui -----------*/
         #aiYui{
@@ -263,8 +287,6 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%,-50%);
-                    &:first-child{
-                    }
                     @keyframes noise-anim{
                         $steps:20;
                         @for $i from 0 through $steps{
@@ -286,7 +308,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
                         clip:rect(0,900px,0,0); 
                     }       
                     &:after{
-                        text-shadow: -1.5px 0 red;
+                        text-shadow: -1px 0 red;
                         animation:noise-anim 2s infinite linear alternate-reverse;
                     }  
                     @keyframes noise-anim-2{
@@ -298,7 +320,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
                         }
                     }
                     &:before{
-                        text-shadow: 1.5px 0 blue; 
+                        text-shadow: 1px 0 blue; 
                         animation:noise-anim-2 2s infinite linear alternate-reverse;
                     }
                 }
