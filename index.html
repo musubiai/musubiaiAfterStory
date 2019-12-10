@@ -46,22 +46,33 @@
 
             // // 始めにメインコンテンツを消してアニメーションだけを出す
             // $("#mainCont").css("display","none");
+
             // // その後にアニメーションを消して
             // setTimeout(function() {
             //     $('#firstAnimation').fadeOut();
             // }, 4000);
+            
             // // メインコンテンツを出す
             // setTimeout(function() {
             //     $('#mainCont').fadeIn();
             // }, 4700);
 
-            $('.inview').css({"opacity":0});
+            $('#aiYui').css("display","none");
+            $('.inview').css("opacity",0);
             $('.inview').on('inview', function(event, isInView) {
                 if (isInView) {
-                    $(this).css({"opacity":1});
+                    $(this).css("opacity",1);
                     $(this).addClass('animated');
                     $(this).addClass('fadeInUp');
                 } 
+            });
+            $('#allFinish_04').on('inview', function(event, isInView) {
+                if (isInView) {
+                    $('#allFinish_04 ul').addClass('endRoll');
+                } 
+                else{
+                    $('#aiYui').fadeIn();
+                }
             });
         });
     </script>
@@ -172,7 +183,9 @@
             <!-- twoPeopleTiedDescription_01 -->
             <div id="twoPeopleTiedDescription_01" class="child text">
                 <p class="inview">
-
+                    ありのままの自分で<br>
+                    出会えた二人は<br>
+                    本当の結びだと思います。
                 </p>
                 <div class="area"></div>
             </div>
@@ -180,66 +193,108 @@
 
             <!-- twoPeopleTiedDescription_02 -->
             <div id="twoPeopleTiedDescription_02" class="child text">
-                <p class="inview"></p>
+                <p class="inview">
+                    たとえ遠距離になってしまっても<br>
+                    異世界空間で会うことができます。
+                </p>
                 <div class="area"></div>
             </div>
             <!-- twoPeopleTiedDescription_02 -->
 
-            <!-- twoPeopleTieFinish -->
-            <div id="twoPeopleTieFinish" class="child finish">
+            <!-- twoPeopleTiedFinish -->
+            <div id="twoPeopleTiedFinish" class="child finish">
                 <p class="inview">
-
+                    musubiai <span>2.0</span> で<br>
+                    結ばれて良かったと思える日が<br>
+                    必ず来ると思います。
                 </p>
                 <div class="area"></div>
             </div>
-            <!-- futureStoryFinish -->
+            <!-- twoPeopleTiedFinish -->
 
             <!-- changeWorld  -->
-            <div id="changeWorld" class="child startCont">
+            <!-- <div id="changeWorld" class="child startCont">
                 <h3 class="inview">
-                    <span>musubiai <span>2.0</span> が変える世界</span>
+                    <span>musubiai <span>2.0</span> で変わる世界</span>
                     AIが世界を変え、<br>
                     アイがもっと変える。
                 </h3>
                 <p><span>#</span>03</p>
-            </div>
+            </div> -->
             <!-- changeWorld -->
 
             <!-- changeWorldDescription_01  -->
-            <div id="changeWorldDescription_01" class="child text">
+            <!-- <div id="changeWorldDescription_01" class="child text">
                 <p></p>
                 <div class="area"></div>
-            </div>
+            </div> -->
             <!-- changeWorldDescription_01 -->
 
             <!-- changeWorldDescription_02  -->
-            <div id="changeWorldDescription_02" class="child text">
+            <!-- <div id="changeWorldDescription_02" class="child text">
                 <p></p>
                 <div class="area"></div>
-            </div>
+            </div> -->
             <!-- changeWorldDescription_02 -->
 
             <!-- changeWorldFinish  -->
-            <div id="changeWorldFinish" class="child finish">
+            <!-- <div id="changeWorldFinish" class="child finish">
                 <p></p>
                 <div class="area"></div>
-            </div>
+            </div> -->
             <!-- changeWorldFinish -->
 
+            <!-- allFinish_01   -->
+            <!-- <div id="allFinish_01" class="child allFinish">
+                <p class="inview">
+                    <img src="img/heartAnimate.svg" alt="ハートのアニメーション">
+                </p>
+            </div> -->
+            <!--  -->
 
+            <!-- allFinish_02 -->
+            <div id="allFinish_02" class="child allFinish">
+                <p>
+                    人だけではなく<br>
+                    全てを愛で結ぶ
+                </p>
+            </div>
+            <!-- allFinish_02 -->
 
+            <!-- allFinish_03  -->
+            <div id="allFinish_03" class="child allFinish">
+                <p>「<span>musubiai</span>」は<br>
+                進化し続ける
+                </p>
+            </div>
+            <!-- allFinish_03 -->
 
-
-            <!-- aiYui -->
-            <div id="aiYui" class="child startCont">
-                <div>
-                    <img src="img/musubiai30.png">
-                    <p data-text="coming soon...">coming soon...</p>
+            <!-- allFinish_04 -->
+            <div id="allFinish_04" class="child allFinish">
+                <div id="allFinish_04Inner">
+                    <ul class="inview">
+                        <li>Inaba Yoshiko</li>
+                        <li>Eguchi Ryo</li>
+                        <li>Kaku Gaiei</li>
+                        <li>Kikuchi Asami</li>
+                        <li>Kimu Gute</li>
+                        <li>Shiba Mizuki</li>
+                        <li>Nagata Ayari</li>
+                        <li>Hayashi Yuugo</li>
+                        <li>Maruta Tomoyuki</li>
+                        <li>Mohamado Sauqi Ray</li>
+                        <li>Morimoto Hiroki</li>
+                        <li>Yakushijin Saeki</li>
+                    </ul>
+                    <div id="aiYui">
+                        <div>
+                            <img src="img/musubiai30.png">
+                            <p data-text="coming soon...">coming soon...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- aiYui -->
-
-
+            <!-- allFinish_04 -->
 
             <footer></footer>
 

@@ -2,7 +2,7 @@
 /*---------- 変数 ----------*/
 $mainColor : #ff0000;
 $linear-gradient: linear-gradient(200deg, rgba(238,9,121,1),rgba(255,106,0,1));
-$linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0,.8));
+$linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0,.6));
 $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
 /*---------- 変数 ----------*/
 
@@ -134,6 +134,15 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
         }
     }
 }
+.allFinish{
+    >p{
+        color: #ff0000;
+        font-weight: 700;
+        font-size: 2.2rem;
+        letter-spacing: .6rem;
+        line-height: 2;
+    }
+}
 /*---------- cssまとめ ----------*/
 
 
@@ -239,6 +248,11 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
 
         /*---------- twoPeopleTiedFinish -----------*/
         #twoPeopleTiedFinish{
+            >p{
+                span{
+                    font-size: 1rem;
+                }
+            }
         }
         /*---------- twoPeopleTiedFinish -----------*/
 
@@ -262,71 +276,131 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
         }
         /*---------- changeWorldFinish -----------*/
 
-        /*---------- aiYui -----------*/
-        #aiYui{
-            div{
-                position: relative;
-                &::before{
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: $aiYui;
-                    border-radius: 1rem;
+        /*---------- allFinish_01 -----------*/
+        #allFinish_01{
+            .heart{
+                display: block;
+                width: 80%;
+                // transform: scale(2);
+            }
+        }
+        /*---------- allFinish_01 -----------*/
+        
+        /*---------- allFinish_02 -----------*/
+        #allFinish_02{
+            }
+        /*---------- allFinish_02 -----------*/
+
+        /*---------- allFinish_03 -----------*/
+        #allFinish_03{
+            >p{
+                span{
+                    font-weight: 700;
+                    letter-spacing: .2rem;
                 }
-                p{
-                    width: 100%;
-                    color: #fff;
-                    text-shadow: .1rem .1rem .1rem #222;
-                    font-size: 3.0rem;
-                    letter-spacing: .1rem;
-                    position: relative;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%);
-                    @keyframes noise-anim{
-                        $steps:20;
-                        @for $i from 0 through $steps{
-                            #{percentage($i*(1/$steps))}{
-                                clip:rect(random(100)+px,9999px,random(100)+px,0);
-                            }
-                        }
+            }
+
+        }
+        /*---------- allFinish_03 -----------*/
+
+        /*---------- allFinish_04 -----------*/
+        #allFinish_04{
+            overflow: hidden;
+            .endRoll{
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+                bottom: 5%;
+                left: 50%;
+                transform: translate(-50%,-5%);
+                animation: endRoll 35s linear forwards;
+                li{
+                    color: $mainColor;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    letter-spacing: .2rem;
+                    line-height: 5;
+                    list-style-type: none;
+                    span{
+                        font-size: 2rem;
                     }
-                    &:after,
-                    &:before{
-                        width: 100%;
-                        color: #fff;
-                        content:attr(data-text);
-                        position:absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%,-50%);
-                        overflow:hidden;
-                        clip:rect(0,900px,0,0); 
-                    }       
-                    &:after{
-                        text-shadow: -1px 0 red;
-                        animation:noise-anim 2s infinite linear alternate-reverse;
-                    }  
-                    @keyframes noise-anim-2{
-                        $steps:20;
-                        @for $i from 0 through $steps{
-                            #{percentage($i*(1/$steps))}{
-                                clip:rect(random(100)+px,9999px,random(100)+px,0);
-                            }
-                        }
+                }
+                @keyframes endRoll {
+                    0%{
+                        transform: translate(-50%,-5%) translateY(100%);
                     }
-                    &:before{
-                        text-shadow: 1px 0 blue; 
-                        animation:noise-anim-2 2s infinite linear alternate-reverse;
+                    100%{
+                        transform: translate(-50%,-5%) translateY(-100%);
                     }
                 }
             }
+            #aiYui{
+                div{
+                    position: relative;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: $aiYui;
+                        border-radius: 1rem;
+                    }
+                    p{
+                        width: 100%;
+                        color: #fff;
+                        text-shadow: .1rem .1rem .1rem #222;
+                        font-size: 3.0rem;
+                        letter-spacing: .1rem;
+                        position: relative;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        @keyframes noise-anim{
+                            $steps:20;
+                            @for $i from 0 through $steps{
+                                #{percentage($i*(1/$steps))}{
+                                    clip:rect(random(100)+px,9999px,random(100)+px,0);
+                                }
+                            }
+                        }
+                        &:after,
+                        &:before{
+                            width: 100%;
+                            color: #fff;
+                            content:attr(data-text);
+                            position:absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            overflow:hidden;
+                            clip:rect(0,900px,0,0); 
+                        }       
+                        &:after{
+                            text-shadow: -1px 0 red;
+                            animation:noise-anim 2s infinite linear alternate-reverse;
+                        }  
+                        @keyframes noise-anim-2{
+                            $steps:20;
+                            @for $i from 0 through $steps{
+                                #{percentage($i*(1/$steps))}{
+                                    clip:rect(random(100)+px,9999px,random(100)+px,0);
+                                }
+                            }
+                        }
+                        &:before{
+                            text-shadow: 1px 0 blue; 
+                            animation:noise-anim-2 2s infinite linear alternate-reverse;
+                        }
+                    }
+                }
+            }
+            /*---------- aiYui -----------*/
         }
-        /*---------- aiYui -----------*/
+        /*---------- allFinish_04 -----------*/
+        
 
 
     }/*---------- mainCoont----------*/
