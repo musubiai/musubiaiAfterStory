@@ -3,7 +3,7 @@
 $mainColor : #ff0000;
 $linear-gradient: linear-gradient(200deg, rgba(238,9,121,1),rgba(255,106,0,1));
 $linear-gradient-back: linear-gradient(200deg, rgba(238,9,121,.8),rgba(255,106,0,.6));
-$aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
+$aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 /*---------- 変数 ----------*/
 
 
@@ -206,10 +206,75 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
 
         /*---------- asking_02 ----------*/
         #asking_02{
+            position: relative;
+            #asking_02Inner{
+                .party{
+                    width: 60%;
+                    position: absolute;
+                    bottom: 10%;
+                    left: 50%;
+                    transform: translate(-50%,-10%);
+                    animation: party 2s forwards;
+                    animation-delay: 1s;
+                    @keyframes party {
+                        0%{
+                            opacity: 0;
+                        }
+                        100%{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
         }/*---------- asking_02-----------*/
 
         /*---------- asking_03 ----------*/
         #asking_03{
+            position: relative;
+            #asking_03Inner{
+                .analyzeMarket{
+                    width: 40%;
+                    position: absolute;
+                    bottom: 12%;
+                    left: 50%;
+                    transform: translate(-50%,-12%);
+                    animation: jump 1.5s infinite, scaleUp 2s forwards 2s;
+                    @keyframes jump {
+                        0%{
+                            opacity: 0;
+                            bottom: 12%;
+                            transform: translate(-50%,-12%);
+                        }
+                        5%{
+                            opacity: 1;
+                            bottom: 12%;
+                            transform: translate(-50%,-12%);
+                        }
+                        50%{
+                            opacity: 1;
+                            bottom: 10%;
+                            transform: translate(-50%,-10%);
+                        }
+                        100%{
+                            opacity: 1;
+                            bottom: 12%;
+                            transform: translate(-50%,-12%);
+                        }
+                    }
+                    @keyframes scaleUp {
+                        0%{
+                            opacity: 0;
+                        }
+                        5%{
+                            opacity: 1;
+                        }
+                        100%{
+                            opacity: 0;
+                            transform: translate(-50%,-12%) scale(0);
+                        }
+                    }
+                }
+            }
         }/*---------- asking_03-----------*/
 
         /*---------- futureStory -----------*/
@@ -218,11 +283,78 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
 
         /*---------- futureStoryDescription_01 -----------*/
         #futureStoryDescription_01{
+            #futureStoryDescription_01Inner{
+                >p{
+                    @extend .mask;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    letter-spacing: .1rem;
+                    line-height: 2;
+                    position: relative;
+                    .loveMyself{
+                        width: 70%;
+                        position: absolute;
+                        bottom: -140%;
+                        left: 50%;
+                        transform: translate(-50%,0);
+                        animation: scale 2s forwards;
+                        animation-delay: 1s;
+                        @keyframes scale{
+                            0%{
+                                opacity: 0;
+                                transform: translate(-50%,0) scale(0);
+                            }
+                            100%{
+                                opacity: 1;
+                                transform: translate(-50%,0) scale(1);
+                            }
+                        }
+                    }
+                }
+            }
         }
         /*---------- futureStoryDescription_01 -----------*/
 
         /*---------- futureStoryDescription_02 -----------*/
         #futureStoryDescription_02{
+            #futureStoryDescription_02Inner{
+                .virtualWomen,
+                .virtualMen{
+                    position: absolute;
+                    animation: fadeInUp 2s forwards;
+                }
+                .virtualWomen{
+                    width: 30%;
+                    top: 8%;
+                    left: 15%;
+                    transform: translate(-10%,-8%);
+                    animation-delay: 1s;
+                }
+                .virtualMen{
+                    width: 35%;
+                    bottom: 15%;
+                    right: 15%;
+                    transform: translate(-15%,-15%);
+                    animation-delay: 1.5s;
+                }
+                @keyframes fadeInUp{
+                    0%{
+                        opacity: 0;
+                        top: 10%;
+                    }
+                    100%{
+                        opacity: 1;
+                        top: 8%;
+                    }
+                }
+                >p{
+                    @extend .mask;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    letter-spacing: .1rem;
+                    line-height: 2;
+                }
+            }
         }
         /*---------- futureStoryDescription_02 -----------*/
 
@@ -319,10 +451,15 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
                     font-size: 1.2rem;
                     font-weight: 700;
                     letter-spacing: .2rem;
-                    line-height: 5;
+                    line-height: 2;
                     list-style-type: none;
+                    padding-bottom: 8rem;
                     span{
-                        font-size: 2rem;
+                        display: block;
+                        font-size: 1rem;
+                        font-weight: 300;
+                        letter-spacing: .1rem;
+                        line-height: 1.2;
                     }
                 }
                 @keyframes endRoll {
@@ -337,27 +474,28 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
             #aiYui{
                 div{
                     position: relative;
-                    &::before{
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: $aiYui;
-                        border-radius: 1rem;
-                    }
                     p{
                         width: 100%;
-                        color: #fff;
-                        text-shadow: .1rem .1rem .1rem #222;
-                        font-size: 3.0rem;
-                        letter-spacing: .1rem;
+                        font-size: 2.4rem;
+                        font-weight: 700;
+                        letter-spacing: .2rem;
                         position: relative;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%,-50%);
+                        &:first-child{
+                            position: absolute;
+                            z-index: -1;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            @extend .mask;
+                            font-size: 1.2rem;
+                            letter-spacing: .1rem;
+                            font-weight: 700;
+                            text-shadow: unset;
+                            span{
+                                font-size: 1rem;
+                                letter-spacing: 0;
+                            }
+                        }
                         @keyframes noise-anim{
                             $steps:20;
                             @for $i from 0 through $steps{
@@ -369,7 +507,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,.8),rgba(138, 176, 250,.8));
                         &:after,
                         &:before{
                             width: 100%;
-                            color: #fff;
+                            // color: #fff;
                             content:attr(data-text);
                             position:absolute;
                             top: 50%;

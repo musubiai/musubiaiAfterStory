@@ -44,20 +44,20 @@
             //フッター読み込み
             $('footer').load('footer.html');
 
-            // 始めにメインコンテンツを消してアニメーションだけを出す
-            $("#mainCont").css("display","none");
+            // // 始めにメインコンテンツを消してアニメーションだけを出す
+            // $("#mainCont").css("display","none");
 
-            // その後にアニメーションを消して
-            setTimeout(function() {
-                $('#firstAnimation').fadeOut();
-            }, 4000);
+            // // その後にアニメーションを消して
+            // setTimeout(function() {
+            //     $('#firstAnimation').fadeOut();
+            // }, 4000);
             
-            // メインコンテンツを出す
-            setTimeout(function() {
-                $('#mainCont').fadeIn();
-            }, 4700);
+            // // メインコンテンツを出す
+            // setTimeout(function() {
+            //     $('#mainCont').fadeIn();
+            // }, 4700);
 
-            $('#aiYui').css("display","none");
+
             $('.inview').css("opacity",0);
             $('.inview').on('inview', function(event, isInView) {
                 if (isInView) {
@@ -66,6 +66,21 @@
                     $(this).addClass('fadeInUp');
                 } 
             });
+
+            // 実現した明るい未来イラスト
+            $('#asking_02Inner img').css("opacity",0);
+            $('#asking_02').on('inview', function(event, isInView) {
+                $('#asking_02Inner img').addClass('party');
+            });
+
+            // 望遠鏡で覗くイラスト
+            $('#asking_03Inner img').css("opacity",0);
+            $('#asking_03').on('inview', function(event, isInView) {
+                $('#asking_03Inner img').addClass('analyzeMarket');
+            });
+
+            // アイちゃんユイちゃんイラスト
+            $('#aiYui').css("display","none");
             $('#allFinish_04').on('inview', function(event, isInView) {
                 if (isInView) {
                     $('#allFinish_04 ul').addClass('endRoll');
@@ -73,6 +88,19 @@
                 else{
                     $('#aiYui').fadeIn();
                 }
+            });
+
+            // 素敵な未来イラスト
+            $('#futureStoryDescription_01 img').css("opacity",0);
+            $('#futureStoryDescription_01').on('inview', function(event, isInView) {
+                $('.fadeInUp1').addClass('loveMyself');
+            });
+
+            // 異世界空間ででの体験イラスト
+            $('#futureStoryDescription_02Inner img').css("opacity",0);
+            $('#futureStoryDescription_02').on('inview', function(event, isInView) {
+                $('.fadeInUp2').addClass('virtualWomen');
+                $('.fadeInUp3').addClass('virtualMen');
             });
         });
     </script>
@@ -83,10 +111,10 @@
     <div id="wrapper">
 
         <!-- firstAnimation -->
-        <div id="firstAnimation">
+        <!-- <div id="firstAnimation">
             <h1></h1>
             <h2><img src="./img/copy.svg"></h2>
-        </div>
+        </div> -->
         <!-- firstAnimation -->
 
         <!-- mainCont -->
@@ -103,24 +131,31 @@
             <!-- asking_01 -->
 
             <!-- asking_02 -->
-            <div id="asking_02" class="ask child">
-                <p class="inview">
-                    <span>musubiai <span>2.0</span></span> が<br>
-                    実現した未来は<br>
-                    今よりも、もっと明るい<br>
-                    そう信じています。
-                </p>
+            <div id="asking_02" class="child">
+                <div id="asking_02Inner" class="ask">
+                    <p class="inview">
+                        <span>musubiai <span>2.0</span></span> が<br>
+                        実現した未来は<br>
+                        今よりも、もっと明るい<br>
+                        そう信じています。
+                    </p>
+                    <img src="./img/family02.svg" alt="明るい未来">
+                </div>
+
                 <div class="area"></div>
             </div>
             <!-- asking_02 -->
             
             <!-- asking_03 -->
-            <div id="asking_03" class="ask child">
-                <p class="inview">
-                    どんな素敵な未来が<br>
-                    待っているのかを<br>
-                    覗いてみましょう。
-                </p>
+            <div id="asking_03" class="child">
+                <div id="asking_03Inner" class="ask">
+                    <p class="inview">
+                        どんな素敵な未来が<br>
+                        待っているのかを<br>
+                        覗いてみましょう。
+                    </p>
+                    <img src="./img/analyzeMarket.svg" alt="素敵な未来覗く">
+                </div>
                 <div class="area"></div>
             </div>
             <!-- asking_03 -->
@@ -138,22 +173,30 @@
 
             <!-- futureStoryDescription_01 -->
             <div id="futureStoryDescription_01" class="child text">
-                <p class="inview">
-                    出会えるのは、素敵な相手<br>
-                    だけではなく、素敵な自分<br>
-                    とも出会うことができる。
-                </p>
+                <div id="futureStoryDescription_01Inner">
+                    <p class="inview">
+                        出会えるのは、素敵な相手<br>
+                        だけではなく、素敵な自分<br>
+                        とも出会うことができます。
+                        <img class="fadeInUp1" src="./img/lovelyMyself.svg" alt="素敵な自分">
+                    </p>
+                </div>
+
                 <div class="area"></div>
             </div>
             <!-- futureStoryDescription_01 -->
 
             <!-- futureStoryDescription_02 -->
             <div id="futureStoryDescription_02" class="child text">
-                <p class="inview">
-                    異世界空間での体験が<br>
-                    自分の新たな可能性と<br>
-                    出会わせてくれる。
-                </p>
+                <div id="futureStoryDescription_02Inner">
+                    <img class="fadeInUp2" src="img/virtualWomen.svg" alt="女性">
+                    <p class="inview">
+                        異世界空間での体験が<br>
+                        自分の新たな可能性と<br>
+                        出会わせてくれる。
+                    </p>
+                    <img class="fadeInUp3" src="img/virtualMen.svg" alt="男性">
+                </div>
                 <div class="area"></div>
             </div>
             <!-- futureStoryDescription_02 -->
@@ -233,21 +276,22 @@
             <div id="allFinish_04" class="child allFinish">
                 <div id="allFinish_04Inner">
                     <ul class="inview">
-                        <li>Inaba Yoshiko</li>
-                        <li>Eguchi Ryo</li>
-                        <li>Kaku Gaiei</li>
-                        <li>Kikuchi Asami</li>
-                        <li>Kimu Gute</li>
-                        <li>Shiba Mizuki</li>
-                        <li>Nagata Ayari</li>
-                        <li>Hayashi Yuugo</li>
-                        <li>Maruta Tomoyuki</li>
-                        <li>Mohamado Sauqi Ray</li>
-                        <li>Morimoto Hiroki</li>
-                        <li>Yakushijin Saeki</li>
+                        <li><span>Designer</span>Inaba Yoshiko</li>
+                        <li><span>Engineer</span>Eguchi Ryo</li>
+                        <li><span>Engineer</span>Kaku Gaiei</li>
+                        <li><span>Designer</span>Kikuchi Asami</li>
+                        <li><span>Engineer</span>Kim Gutae</li>
+                        <li><span>Designer</span>Shiba Mizuki</li>
+                        <li><span>Designer</span>Nagata Ayari</li>
+                        <li><span>福井県の人</span>Hayashi Yuugo</li>
+                        <li><span>Designer</span>Maruta Tomoyuki</li>
+                        <li><span>Designer</span>Mohammad Sauqi Ray</li>
+                        <li><span>Engineer</span>Morimoto Hiroki</li>
+                        <li><span>Engineer</span>Yakushijin Saeki</li>
                     </ul>
                     <div id="aiYui">
                         <div>
+                            <p>musubiai <span>3.0</span></p>
                             <img src="img/musubiai30.png">
                             <p data-text="coming soon...">coming soon...</p>
                         </div>
