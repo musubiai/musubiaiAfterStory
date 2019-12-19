@@ -43,7 +43,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
         font-size: 1.6rem;
         font-weight: 600;
         letter-spacing: .2rem;
-        line-height: 2;
+        line-height: 1.8;
         span{
             span{
                 font-size: 1.3rem;
@@ -137,9 +137,9 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 .allFinish{
     >p{
         color: #ff0000;
-        font-weight: 700;
-        font-size: 2.2rem;
-        letter-spacing: .6rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+        letter-spacing: .2rem;
         line-height: 2;
     }
 }
@@ -316,7 +316,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
                 .virtualWomen{
                     position: absolute;
                     z-index: -1;
-                    animation: tobu 6s ease-out forwards 1.5s, buruburu .2s linear infinite;
+                    animation: tobu 6s ease-out forwards 2s, buruburu .2s linear infinite;
                     width: 40%;
                     top: 80%;
                     left: 0;
@@ -454,11 +454,6 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 
         /*---------- allFinish_01 -----------*/
         #allFinish_01{
-            .heart{
-                display: block;
-                width: 80%;
-                // transform: scale(2);
-            }
         }
         /*---------- allFinish_01 -----------*/
         
@@ -469,13 +464,28 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 
         /*---------- allFinish_03 -----------*/
         #allFinish_03{
-            >p{
-                span{
-                    font-weight: 700;
-                    letter-spacing: .2rem;
+            #allFinish_03Inner{
+                img{
+                    width: 20%;
+                    position: absolute;
+                    top: 50%;
+                    right: -20%;
+                    transform: translate(0,-50%);
+                    animation: ai 4s ease-out infinite;
+                    @keyframes ai{
+                        0% {
+                            transform: translate(0,-50%) rotate(0);
+                        }
+                        50%{
+                            transform: translate(0,-50%) rotate(-13deg);
+                            right: -10%;
+                        }
+                        100% {
+                            transform: translate(0,-50%) rotate(0);
+                        }
+                    }
                 }
             }
-
         }
         /*---------- allFinish_03 -----------*/
 
