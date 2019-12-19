@@ -73,23 +73,6 @@
                 $('#asking_02Inner img').addClass('party');
             });
 
-            // 望遠鏡で覗くイラスト
-            // $('#asking_03Inner img').css("opacity",0);
-            $('#asking_03').on('inview', function(event, isInView) {
-                $('#asking_03Inner img').addClass('analyzeMarket');
-            });
-
-            // アイちゃんユイちゃんイラスト
-            $('#aiYui').css("display","none");
-            $('#allFinish_04').on('inview', function(event, isInView) {
-                if (isInView) {
-                    $('#allFinish_04 ul').addClass('endRoll');
-                } 
-                else{
-                    $('#aiYui').fadeIn();
-                }
-            });
-
             // 素敵な自分イラスト
             $('#futureStoryDescription_01 img').css("opacity",0);
             $('#futureStoryDescription_01 .inview').on('inview', function(event, isInView) {
@@ -102,10 +85,34 @@
                 $('.fadeInUp2').addClass('virtualWomen');
             });
 
-            // 2.0になれた人イラスト
-            $('#futureStoryFinishInner img').css("opacity",0);
-            $('#futureStoryFinishInner .inview').on('inview', function(event, isInView) {
-                $('#futureStoryFinishInner img').addClass('levelUp');
+            // 雨が2人をくっつけてるイラスト
+            $('#twoPeopleTiedDescription_01 img').css("opacity",0);
+            $('#twoPeopleTiedDescription_01 .inview').on('inview', function(event, isInView) {
+                $('#twoPeopleTiedDescription_01 img').addClass('umbrella');
+            });
+
+            // こんなに遠くても繋がることが出来るイラスト
+            $('#twoPeopleTiedDescription_02 img').css("opacity",0);
+            $('#twoPeopleTiedDescription_02Inner .inview').on('inview', function(event, isInView) {
+                $('#twoPeopleTiedDescription_02Inner img').addClass('worldMap');
+            });
+
+            // 温かい家族イラスト
+            $('#allFinish_02Inner img').css({"opacity":0});
+            $('#allFinish_02Inner .inview').on('inview', function(event, isInView) {
+                $('#allFinish_02Inner img:first-child').addClass('city01');
+                $('#allFinish_02Inner img:last-child').addClass('city02');
+            });
+
+            // アイちゃんユイちゃんイラスト
+            $('#aiYui').css("display","none");
+            $('#allFinish_04').on('inview', function(event, isInView) {
+                if (isInView) {
+                    $('#allFinish_04 ul').addClass('endRoll');
+                } 
+                else{
+                    $('#aiYui').fadeIn();
+                }
             });
         });
     </script>
@@ -245,22 +252,28 @@
             <!-- twoPeopleTied -->
 
             <!-- twoPeopleTiedDescription_01 -->
-            <div id="twoPeopleTiedDescription_01" class="child text">
-                <p class="inview">
-                    ありのままのあなたで<br>
-                    出会い、結ばれた2人は<br>
-                    本当の結びだと思います。
-                </p>
+            <div id="twoPeopleTiedDescription_01" class="child">
+                <div id="twoPeopleTiedDescription_01Inner" class="text">
+                    <p class="inview">
+                        ありのままのあなたで<br>
+                        出会い、結ばれた2人は<br>
+                        本当の結びだと思います。
+                    </p>
+                    <img src="./img/love03.svg" alt="傘の可愛いイラスト">
+                </div>
                 <div class="area"></div>
             </div>
             <!-- twoPeopleTiedDescription_01 -->
 
             <!-- twoPeopleTiedDescription_02 -->
-            <div id="twoPeopleTiedDescription_02" class="child text">
-                <p class="inview">
-                    たとえ、離れた場所に居ても<br>
-                    異世界空間で会うことができます。
-                </p>
+            <div id="twoPeopleTiedDescription_02" class="child">
+                <div id="twoPeopleTiedDescription_02Inner" class="text">
+                    <p class="inview">
+                        たとえ、離れた場所に居ても<br>
+                        異世界空間で会うことができます。
+                    </p>
+                    <img src="./img/worldConnected01.svg" alt="こんなに遠くても繋がるイラスト">
+                </div>
                 <div class="area"></div>
             </div>
             <!-- twoPeopleTiedDescription_02 -->
@@ -277,12 +290,17 @@
             <!-- twoPeopleTiedFinish -->
 
             <!-- allFinish_02 -->
-            <div id="allFinish_02" class="child allFinish">
-                <p>
-                    AIと共に生きる私たちには、<br>
-                    ドキドキ、ワクワクするような<br>
-                    明るい未来が待っています。
-                </p>
+            <div id="allFinish_02" class="child">
+                <div id="allFinish_02Inner" class="allFinish">
+                    <img src="./img/family05.svg" alt="明るい家族のイラスト">
+                    <p class="inview">
+                        AIと共に生きる私たちには、<br>
+                        ドキドキ、ワクワクするような<br>
+                        明るい未来が待っています。
+                    </p>
+                    <img src="./img/family06.svg" alt="明るい家族のイラスト">
+                </div>
+
             </div>
             <!-- allFinish_02 -->
 
@@ -292,6 +310,7 @@
                     <p>「<span>musubiai</span>」は<br>
                         進化し続けます
                     </p>
+                    <img src="./img/ai.png" alt="アイちゃん">
                 </div>
 
             </div>
@@ -301,23 +320,23 @@
             <div id="allFinish_04" class="child allFinish">
                 <div id="allFinish_04Inner">
                     <ul class="inview">
-                        <li><span>Designer</span>Inaba Yoshiko</li>
-                        <li><span>Engineer</span>Eguchi Ryo</li>
-                        <li><span>Engineer</span>Kaku Gaiei</li>
-                        <li><span>Designer</span>Kikuchi Asami</li>
-                        <li><span>Engineer</span>Kim Gutae</li>
-                        <li><span>Designer</span>Shiba Mizuki</li>
-                        <li><span>Designer</span>Nagata Ayari</li>
-                        <li><span>福井県の人</span>Hayashi Yuugo</li>
-                        <li><span>Designer</span>Maruta Tomoyuki</li>
-                        <li><span>Designer</span>Mohammad Sauqi Ray</li>
-                        <li><span>Engineer</span>Morimoto Hiroki</li>
-                        <li><span>Engineer</span>Yakushijin Saeki</li>
+                        <li><span>デザイナー</span>Inaba Yoshiko</li>
+                        <li><span>エンジニア</span>Eguchi Ryo</li>
+                        <li><span>エンジニア</span>Kaku Gaiei</li>
+                        <li><span>デザイナー</span>Kikuchi Asami</li>
+                        <li><span>エンジニア</span>Kim Gutae</li>
+                        <li><span>デザイナー</span>Shiba Mizuki</li>
+                        <li><span>デザイナー</span>Nagata Ayari</li>
+                        <li><span>エンジニア</span>Hayashi Yuugo</li>
+                        <li><span>デザイナー</span>Maruta Tomoyuki</li>
+                        <li><span>デザイナー</span>Mohammad Sauqi Ray</li>
+                        <li><span>エンジニア</span>Morimoto Hiroki</li>
+                        <li><span>エンジニア</span>Yakushijin Saeki</li>
                     </ul>
                     <div id="aiYui">
                         <div>
-                            <p>musubiai <span>3.0</span></p>
                             <img src="img/musubiai30.png">
+                            <p class="musubiai">musubiai <span>3.0</span></p>
                             <p data-text="coming soon...">coming soon...</p>
                         </div>
                     </div>

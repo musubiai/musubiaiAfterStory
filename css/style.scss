@@ -111,29 +111,29 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
         line-height: 2;
     }
 }
-.finish{
-    background: $linear-gradient-back;
-    position: relative;
-    z-index: 999;
-    >p{
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 600;
-        letter-spacing: .15rem;
-        line-height: 2;
-        position: relative;
-        z-index: 2;
-        text-shadow: 0.1rem 0.1rem 0.2rem #333;
-    }
-    .area{
-        .circles{
-            z-index: -1;
-        }
-        li{
-            background: rgba(255,255,255,.3);
-        }
-    }
-}
+// .finish{
+//     background: $linear-gradient-back;
+//     position: relative;
+//     z-index: 999;
+//     >p{
+//         color: #fff;
+//         font-size: 1.3rem;
+//         font-weight: 600;
+//         letter-spacing: .15rem;
+//         line-height: 2;
+//         position: relative;
+//         z-index: 2;
+//         text-shadow: 0.1rem 0.1rem 0.2rem #333;
+//     }
+//     .area{
+//         .circles{
+//             z-index: -1;
+//         }
+//         li{
+//             background: rgba(255,255,255,.3);
+//         }
+//     }
+// }
 .allFinish{
     >p{
         color: #ff0000;
@@ -209,13 +209,13 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
             position: relative;
             #asking_02Inner{
                 .party{
-                    width: 55%;
+                    width: 60%;
                     position: absolute;
                     bottom: 10%;
                     left: 50%;
                     transform: translate(-50%,-10%);
                     animation: party 2s forwards;
-                    animation-delay: 1s;
+                    animation-delay: .5s;
                     @keyframes party {
                         0%{
                             opacity: 0;
@@ -414,11 +414,53 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 
         /*---------- twoPeopleTiedDescription_01 -----------*/
         #twoPeopleTiedDescription_01{
+            #twoPeopleTiedDescription_01Inner{
+                .umbrella{
+                    width: 55%;
+                    position: absolute;
+                    bottom: 10%;
+                    left: 50%;
+                    transform: translate(-50%,-10%);
+                    animation: scale 2s forwards;
+                    animation-delay: .5s;
+                    @keyframes scale{
+                        0%{
+                            opacity: 0;
+                            transform: translate(-50%,0) scale(0);
+                        }
+                        100%{
+                            opacity: 1;
+                            transform: translate(-50%,0) scale(1);
+                        }
+                    }
+                }
+            }
         }
         /*---------- twoPeopleTiedDescription_01 -----------*/
 
         /*---------- twoPeopleTiedDescription_02 -----------*/
         #twoPeopleTiedDescription_02{
+            #twoPeopleTiedDescription_02Inner{
+                .worldMap{
+                    width: 90%;
+                    position: absolute;
+                    bottom: 20%;
+                    left: 50%;
+                    transform: translate(-50%,-20%);
+                    animation: scale 2s forwards;
+                    animation-delay: .5s;
+                    @keyframes scale{
+                        0%{
+                            opacity: 0;
+                            transform: translate(-50%,0) scale(0);
+                        }
+                        100%{
+                            opacity: 1;
+                            transform: translate(-50%,0) scale(1);
+                        }
+                    }
+                }
+            }
         }
         /*---------- twoPeopleTiedDescription_02 -----------*/
 
@@ -459,12 +501,61 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
         
         /*---------- allFinish_02 -----------*/
         #allFinish_02{
+            #allFinish_02Inner{
+                img{
+                    position: absolute;
+                }
+                .city01{
+                    width: 60%;
+                    top: 8%;
+                    left: 0;
+                    animation: fadeInUp 2.5s forwards;
+                    animation-delay: 1s;
+                }
+                .city02{
+                    width: 50%;
+                    bottom: 15%;
+                    right: 5%;
+                    animation: fadeInUp 2.5s forwards;
+                    animation-delay: 1.5s;
+                }
+                @keyframes fadeInUp{
+                    0%{
+                        opacity: 0;
+                        top: 10%;
+                    }
+                    100%{
+                        opacity: 1;
+                        top: 8%;
+                    }
+                }
             }
+        }
         /*---------- allFinish_02 -----------*/
 
         /*---------- allFinish_03 -----------*/
         #allFinish_03{
             #allFinish_03Inner{
+                img{
+                    width: 20%;
+                    position: absolute;
+                    top: 50%;
+                    right: -20%;
+                    transform: translate(0,-50%);
+                    animation: ai 4s ease-out infinite;
+                    @keyframes ai{
+                        0% {
+                            transform: translate(0,-50%) rotate(0);
+                        }
+                        50%{
+                            transform: translate(0,-50%) rotate(-13deg);
+                            right: -10%;
+                        }
+                        100% {
+                            transform: translate(0,-50%) rotate(0);
+                        }
+                    }
+                }
             }
         }
         /*---------- allFinish_03 -----------*/
@@ -508,28 +599,24 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
             #aiYui{
                 div{
                     position: relative;
+                    .musubiai{
+                        @extend .mask;
+                        font-size: 1.8rem;
+                        letter-spacing: .1rem;
+                        font-weight: 700;
+                        text-shadow: unset;
+                        margin-bottom: .5rem;
+                        span{
+                            font-size: 1.4rem;
+                            letter-spacing: 0;
+                        }
+                    }
                     p{
                         width: 100%;
                         font-size: 2.4rem;
                         font-weight: 700;
                         letter-spacing: .2rem;
                         position: relative;
-                        &:first-child{
-                            position: absolute;
-                            z-index: -1;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%,-50%);
-                            @extend .mask;
-                            font-size: 1.2rem;
-                            letter-spacing: .1rem;
-                            font-weight: 700;
-                            text-shadow: unset;
-                            span{
-                                font-size: 1rem;
-                                letter-spacing: 0;
-                            }
-                        }
                         @keyframes noise-anim{
                             $steps:20;
                             @for $i from 0 through $steps{
