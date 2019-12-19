@@ -69,12 +69,12 @@
 
             // 実現した明るい未来イラスト
             $('#asking_02Inner img').css("opacity",0);
-            $('#asking_02').on('inview', function(event, isInView) {
+            $('#asking_02 .inview').on('inview', function(event, isInView) {
                 $('#asking_02Inner img').addClass('party');
             });
 
             // 望遠鏡で覗くイラスト
-            $('#asking_03Inner img').css("opacity",0);
+            // $('#asking_03Inner img').css("opacity",0);
             $('#asking_03').on('inview', function(event, isInView) {
                 $('#asking_03Inner img').addClass('analyzeMarket');
             });
@@ -90,17 +90,22 @@
                 }
             });
 
-            // 素敵な未来イラスト
+            // 素敵な自分イラスト
             $('#futureStoryDescription_01 img').css("opacity",0);
-            $('#futureStoryDescription_01').on('inview', function(event, isInView) {
+            $('#futureStoryDescription_01 .inview').on('inview', function(event, isInView) {
                 $('.fadeInUp1').addClass('loveMyself');
             });
 
-            // 異世界空間ででの体験イラスト
+            // 可能性を見つけそこに飛んでいくイラスト
             $('#futureStoryDescription_02Inner img').css("opacity",0);
             $('#futureStoryDescription_02').on('inview', function(event, isInView) {
                 $('.fadeInUp2').addClass('virtualWomen');
-                $('.fadeInUp3').addClass('virtualMen');
+            });
+
+            // 2.0になれた人イラスト
+            $('#futureStoryFinishInner img').css("opacity",0);
+            $('#futureStoryFinishInner .inview').on('inview', function(event, isInView) {
+                $('#futureStoryFinishInner img').addClass('levelUp');
             });
         });
     </script>
@@ -126,7 +131,20 @@
                     <span>musubiai <span>2.0</span></span> は<br>
                     どうでしたか？
                 </p>
-                <div class="area"></div>
+                <div class="area">
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
             <!-- asking_01 -->
 
@@ -154,7 +172,7 @@
                         待っているのかを<br>
                         覗いてみましょう。
                     </p>
-                    <img src="./img/analyzeMarket.svg" alt="素敵な未来覗く">
+                    <!-- <img src="./img/analyzeMarket.svg" alt="素敵な未来覗く"> -->
                 </div>
                 <div class="area"></div>
             </div>
@@ -178,7 +196,7 @@
                         出会えるのは、素敵な相手<br>
                         だけではなく、素敵な自分<br>
                         とも出会うことができます。
-                        <img class="fadeInUp1" src="./img/lovelyMyself.svg" alt="素敵な自分">
+                        <img class="fadeInUp1" src="./img/thinking.svg" alt="素敵な自分">
                     </p>
                 </div>
 
@@ -189,25 +207,28 @@
             <!-- futureStoryDescription_02 -->
             <div id="futureStoryDescription_02" class="child text">
                 <div id="futureStoryDescription_02Inner">
-                    <img class="fadeInUp2" src="img/virtualWomen.svg" alt="女性">
+                    <img class="fadeInUp2" src="img/followingTheIdea.svg" alt="女性">
                     <p class="inview">
                         異世界空間での体験が<br>
                         自分の新たな可能性と<br>
                         出会わせてくれる。
                     </p>
-                    <img class="fadeInUp3" src="img/virtualMen.svg" alt="男性">
+                    <!-- <img class="fadeInUp3" src="img/ideaApplications.svg" alt="男性"> -->
                 </div>
                 <div class="area"></div>
             </div>
             <!-- futureStoryDescription_02 -->
 
             <!-- futureStoryFinish -->
-            <div id="futureStoryFinish" class="child finish">
-                <p class="inview">
-                    AIと共存している未来は<br>
-                    日々が、アップデートで<br>
-                    人としても2.0になれる。
-                </p>
+            <div id="futureStoryFinish" class="child">
+                <div id="futureStoryFinishInner" class="text">
+                    <p class="inview">
+                        AIと共存している未来は<br>
+                        日々が、アップデートで<br>
+                        人としても2.0になれる。
+                    </p>
+                    <img src="./img/growingUp.svg" alt="2.0になれたよ！">
+                </div>
                 <div class="area"></div>
             </div>
             <!-- futureStoryFinish -->

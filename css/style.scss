@@ -209,7 +209,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
             position: relative;
             #asking_02Inner{
                 .party{
-                    width: 60%;
+                    width: 55%;
                     position: absolute;
                     bottom: 10%;
                     left: 50%;
@@ -233,43 +233,37 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
             position: relative;
             #asking_03Inner{
                 .analyzeMarket{
-                    width: 40%;
+                    width: 35%;
                     position: absolute;
-                    bottom: 12%;
+                    top: 15%;
                     left: 50%;
-                    transform: translate(-50%,-12%);
-                    animation: jump 1.5s infinite, scaleUp 2s forwards 2s;
-                    @keyframes jump {
+                    transform: translate(-50%,-15%);
+                    animation: buruburu .5s infinite 1s, scaleDown 1.5s forwards 1.5s;
+                    @keyframes buruburu {
                         0%{
-                            opacity: 0;
-                            bottom: 12%;
-                            transform: translate(-50%,-12%);
-                        }
-                        5%{
                             opacity: 1;
-                            bottom: 12%;
-                            transform: translate(-50%,-12%);
+                            transform: translate(-50%,-12%) rotate(-10deg);
                         }
-                        50%{
-                            opacity: 1;
-                            bottom: 10%;
-                            transform: translate(-50%,-10%);
+                        20%{
+                            transform: translate(-50%,-12%) rotate(0deg);
+                        }
+                        40%{
+                            transform: translate(-50%,-12%) rotate(-10deg);
+                        }
+                        60%{
+                            transform: translate(-50%,-12%) rotate(0deg);
+                        }
+                        8%{
+                            transform: translate(-50%,-12%) rotate(-10deg);
                         }
                         100%{
-                            opacity: 1;
-                            bottom: 12%;
-                            transform: translate(-50%,-12%);
+                            transform: translate(-50%,-12%) rotate(0deg);
                         }
                     }
-                    @keyframes scaleUp {
+                    @keyframes scaleDown {
                         0%{
-                            opacity: 0;
-                        }
-                        5%{
-                            opacity: 1;
                         }
                         100%{
-                            opacity: 0;
                             transform: translate(-50%,-12%) scale(0);
                         }
                     }
@@ -298,7 +292,7 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
                         left: 50%;
                         transform: translate(-50%,0);
                         animation: scale 2s forwards;
-                        animation-delay: 1s;
+                        animation-delay: .5s;
                         @keyframes scale{
                             0%{
                                 opacity: 0;
@@ -317,35 +311,54 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 
         /*---------- futureStoryDescription_02 -----------*/
         #futureStoryDescription_02{
+            overflow: hidden;
             #futureStoryDescription_02Inner{
-                .virtualWomen,
-                .virtualMen{
-                    position: absolute;
-                    animation: fadeInUp 2s forwards;
-                }
                 .virtualWomen{
-                    width: 30%;
-                    top: 8%;
-                    left: 15%;
-                    transform: translate(-10%,-8%);
-                    animation-delay: 1s;
+                    position: absolute;
+                    z-index: -1;
+                    animation: tobu 6s ease-out forwards 1.5s, buruburu .2s linear infinite;
+                    width: 40%;
+                    top: 80%;
+                    left: 0;
+                    transform: translate(0,-80%);
                 }
-                .virtualMen{
-                    width: 35%;
-                    bottom: 15%;
-                    right: 15%;
-                    transform: translate(-15%,-15%);
-                    animation-delay: 1.5s;
-                }
-                @keyframes fadeInUp{
+                @keyframes tobu{
                     0%{
                         opacity: 0;
-                        top: 10%;
+                        top: 70%;
+                        left: 0;
+                        transform: translate(0,-70%);
+                    }
+                    20%{
+                        opacity: 1;
                     }
                     100%{
                         opacity: 1;
-                        top: 8%;
+                        top: -30%;
+                        left: 100%;
+                        transform: translate(-100%,-30%);
                     }
+                }
+                @keyframes buruburu {
+                    0%{
+                        transform: rotate(-1deg);
+                    }
+                    20%{
+                        transform: rotate(0deg);
+                    }
+                    40%{
+                        transform: rotate(-1deg);
+                    }
+                    60%{
+                        transform: rotate(0deg);
+                    }
+                    80%{
+                        transform: rotate(-1deg);
+                    }
+                    100%{
+                        transform: rotate(0deg)
+                    }
+                    
                 }
                 >p{
                     @extend .mask;
@@ -360,6 +373,37 @@ $aiYui: linear-gradient(200deg, rgba(250, 143, 191,1),rgba(138, 176, 250,1));
 
         /*---------- futureStoryFinish -----------*/
         #futureStoryFinish{
+            overflow: hidden;
+            #futureStoryFinishInner{
+                .levelUp{
+                    width: 35%;
+                    position: absolute;
+                    z-index: -1;
+                    top: 20%;
+                    left: 50%;
+                    transform: translate(-50%,-20%);
+                    animation: tondeiku 5s forwards 1.5s;
+                    @keyframes tondeiku {
+                        0%{
+                            opacity: 0;
+                            top: 30%;
+                            left: 50%;
+                            transform: translate(-50%,-30%);
+                        }
+                        20%{
+                            top: 35%;
+                            left: 50%;
+                            transform: translate(-50%,-35%);
+                        }
+                        100%{
+                            opacity: 1;
+                            top: -30%;
+                            left: 50%;
+                            transform: translate(-50%,0);
+                        }
+                    } 
+                }
+            }
         }
         /*---------- futureStoryFinish -----------*/
     
